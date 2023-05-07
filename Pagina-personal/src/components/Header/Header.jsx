@@ -5,11 +5,9 @@ const Header = () => {
     <header className="container py-3">
       <div className="row">
         <div className="col-12 text-center">
-          <h1 className="text-light">Mi página personal</h1>
-          <p className="text-light">Soy una persona interesada en:</p>
-          <ul className="text-light">
-            <li>EL NUEVO ZELDA QUE SALE EN 10 DÍAS</li>
-          </ul>
+          <h1 className="text-light">Mi página sobre una mudanza</h1>
+          <p className="text-light">Esto va de una única cosa:</p>
+          <p className="text-info">ESTOY HASTA LAS NARICES DE LAS MUDANZAS</p>
         </div>
       </div>
     </header>

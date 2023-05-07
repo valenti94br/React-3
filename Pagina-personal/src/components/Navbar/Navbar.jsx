@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -24,7 +23,7 @@ const Navbar = () => {
             <Link to="/" className="nav-link">Home</Link>
           </li>
           <li className="nav-item mx-2">
-            <Link to="/header" className="nav-link">Other</Link>
+            <Link to="/header" className="nav-link">Info</Link>
           </li>
           <li className="nav-item mx-2">
             <Link to="/contact" className="nav-link">Contact</Link>
