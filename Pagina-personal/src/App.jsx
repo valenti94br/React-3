@@ -6,8 +6,8 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import UserForm from './components/UserForm/UserForm';
+import Header from './components/Header/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/header" element={<Header />} />
           <Route path="/contact" element={<UserForm />} />
         </Routes>
       </div>
