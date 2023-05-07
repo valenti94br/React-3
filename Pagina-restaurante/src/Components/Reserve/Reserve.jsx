@@ -24,8 +24,8 @@ function Reserve() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} id="reserveForm">
+    <div className="bg-dark text-white min-vh-100 d-flex align-items-center justify-content-center">
+      <form onSubmit={handleSubmit} id="reserveForm" className="d-flex flex-column align-items-center">
         <label>
           Nombre:
           <input
@@ -46,7 +46,7 @@ function Reserve() {
             required
           />
         </label>
-        <input type="submit" value="Reservar" form="reserveForm" />
+        <input type="submit" value="Reservar" form="reserveForm" className="btn btn-primary mt-3" />
       </form>
     </div>
   );
