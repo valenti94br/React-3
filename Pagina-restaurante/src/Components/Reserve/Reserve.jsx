@@ -1,55 +1,55 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import React from 'react';
+function Reserve() {
+  const [name, setName] = useState('');
+  const [date, setDate] = useState('');
 
-class Reserve extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      date: '',
-    };
-  }
+  const navigate = useNavigate();
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    if (name === 'name') {
+      setName(value);
+    } else if (name === 'date') {
+      setDate(value);
+    }
   };
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    localStorage.setItem('reservation', JSON.stringify(this.state));
-    this.props.history.push('/');
+    console.log('handleSubmit ejecutado'); //Confirmación
+    localStorage.setItem('reservation', JSON.stringify({ name, date }));
+    navigate('/');
   };
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Nombre:
-            <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-          <label>
-            Fecha de reserva:
-            <input
-              type="date"
-              name="date"
-              value={this.state.date}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-          <input type="submit" value="Reservar" />
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <form onSubmit={handleSubmit} id="reserveForm">
+        <label>
+          Nombre:
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label>
+          Fecha de reserva:
+          <input
+            type="date"
+            name="date"
+            value={date}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <input type="submit" value="Reservar" form="reserveForm" />
+      </form>
+    </div>
+  );
 }
 
 export default Reserve;
